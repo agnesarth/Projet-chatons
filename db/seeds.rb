@@ -8,14 +8,15 @@
 
 require 'faker'
 
-Item.destroy
-# Seed Item
+Item.destroy_all
 
+# Seed Item
 5.times do
   Item.create!(
     title: Faker::Creature::Cat.name,
     price: Faker::Number.decimal(l_digits: 2),
     image_url: Faker::Internet.url(host: 'chatons.com'),
-    description: Faker::Hipster.paragraph 
+    description: Faker::Hipster.sentence(word_count: 3)
   )
 end
+
