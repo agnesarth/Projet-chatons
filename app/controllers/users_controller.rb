@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  after_create :welcome_send
+
   def new
     @user = User.new
   end
@@ -11,8 +13,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
-  end 
+      @users = User.all
+  end
 
   def edit
     @user = User.find(params[:id])
@@ -28,10 +30,7 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
-  private
-
-  def user_params
-    params.require(:user).permit(:email)
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
   end
-
 end
