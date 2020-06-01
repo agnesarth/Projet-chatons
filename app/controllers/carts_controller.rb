@@ -4,7 +4,6 @@ class CartsController < ApplicationController
   def new
     @cart = Cart.new
     @cart.user_id = authenticate_user.id
-    @cart.cart_items << 
   end
 
   def create
