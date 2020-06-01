@@ -7,9 +7,12 @@ Rails.application.initialize!
 ActionMailer::Base.smtp_settings = {
   :user_name => ENV['SENDGRID_LOGIN'],
   :password => ENV['SENDGRID_PWD'],
-  :domain => 'animalmatching.com',
+  :domain => 'https://boiling-inlet-79758.herokuapp.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
   :authentication => :plain,
   :enable_starttls_auto => true
 }
+
+ActionMailer::Base.perform_deliveries = true
+ActionMailer::Base.raise_delivery_errors = true
