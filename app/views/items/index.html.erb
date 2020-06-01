@@ -15,14 +15,19 @@
 <div class="card-columns border-info container ">
   <% @items.each do | item | %>
     <div class="card border-secondary mb-3" style="width: 18rem;">
-      <img class="card-img-top" src=<%= item.image_url %> alt="Cute cat image"> 
+      <img class="card-img-top" src=<%= item.image_url %> alt="Cute cat image">
       <div class="card-body">
-        <p class="card-text">Prix: <%= item.price %></p> 
-          <%= link_to "Ajouter au panier", new_cart_path, class: "btn btn-primary btn-sm"%>
+        <p class="card-text "><b> <%= item.price %> €</b></p>
+          <div class="d-flex justify-content-between">
           <%= link_to "Voir le produit", item_path(item), class: "btn btn-outline-primary btn-sm"%>
+          <%= link_to new_cart_path, class: "btn btn-primary btn-sm ml-5" do %><i class="fa fa-heart"></i><% end %>
+          <% if @cart.nil? %>
+          <%= link_to new_cart_path, class: "btn btn-primary btn-sm" do %><i class="fa fa-shopping-cart"></i><% end %>
+          <% else %>
+          <%= link_to cart_path(@cart.id), method: :update, class: "btn btn-primary btn-sm" do %><i class="fa fa-shopping-cart"></i><% end %>
+          <% end %>
+          </div>
       </div>
     </div>
   <% end %>
 </div>
-
-</ul>
