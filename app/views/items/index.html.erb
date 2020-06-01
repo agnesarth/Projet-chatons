@@ -17,9 +17,9 @@
     <div class="card border-secondary mb-3">
       <img class="card-img-top" src=<%= item.image_url %> alt="Cute cat image"> 
       <div class="card-body">
-      <h5 class="card-title"><%= item.title %></h5>
-        <p class="card-text">Prix: <%= item.price %> €</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>    
+        <p class="card-text">Prix: <%= item.price %></p> 
+          <%= link_to "Ajouter au panier", new_cart_path, class: "btn btn-primary btn-sm"%>
+          <%= link_to "Voir le produit", item_path(item), class: "btn btn-outline-primary btn-sm"%>
       </div>
     </div>
   <% end %>
