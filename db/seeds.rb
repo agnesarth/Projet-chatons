@@ -9,6 +9,7 @@
 require 'faker'
 
 Item.destroy_all
+User.destroy_all
 
 # Seed Item
 5.times do
@@ -20,3 +21,11 @@ Item.destroy_all
   )
 end
 
+
+# Seed User
+5.times do
+  User.create!(
+    email: Faker::Internet.safe_email,
+    password: Faker::Internet.password(min_length: 6)
+  )
+end
