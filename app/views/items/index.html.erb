@@ -9,15 +9,12 @@
   </p>
 </div>
 
-
-<br/>
-<br/>
 <div class="card-columns border-info container">
   <% @items.each do | item | %>
-    <div class="card border-secondary mb-3">
-      <img class="card-img-top" src=<%= item.image_url %> alt="Cute cat image"> 
+    <div class="card border-secondary mb-4">
+      <img class="card-img-top" src=<%= item.image_url %> alt="Cute cat image" title="<%= item.title %>" > 
       <div class="card-body">
-        <p class="card-text">Prix: <%= item.price %></p> 
+        <p class="card-text">Prix: <%= item.price %> €</p> 
           <%= link_to "Ajouter au panier", new_cart_path, class: "btn btn-primary btn-sm"%>
           <%= link_to "Voir le produit", item_path(item), class: "btn btn-outline-primary btn-sm"%>
       </div>
