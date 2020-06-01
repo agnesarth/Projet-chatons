@@ -11,14 +11,39 @@ require 'faker'
 Item.destroy_all
 User.destroy_all
 
+url_chatons = ["https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg",
+  "https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg", 
+  "https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg",
+  "https://images.pexels.com/photos/96938/pexels-photo-96938.jpeg",
+  "https://images.pexels.com/photos/1056251/pexels-photo-1056251.jpeg",
+  "https://images.pexels.com/photos/1643457/pexels-photo-1643457.jpeg", 
+  "https://images.pexels.com/photos/1317844/pexels-photo-1317844.jpeg", 
+  "https://images.pexels.com/photos/1056252/pexels-photo-1056252.jpeg", 
+  "https://images.pexels.com/photos/1472999/pexels-photo-1472999.jpeg", 
+  "https://images.pexels.com/photos/479009/pexels-photo-479009.jpeg",
+  "https://images.pexels.com/photos/1981111/pexels-photo-1981111.jpeg",
+  "https://images.pexels.com/photos/2835623/pexels-photo-2835623.jpeg",
+  "https://images.pexels.com/photos/731553/pexels-photo-731553.jpeg",
+  "https://images.pexels.com/photos/1447884/pexels-photo-1447884.jpeg",
+  "https://images.pexels.com/photos/1096091/pexels-photo-1096091.jpeg",
+  "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg",
+  "https://images.pexels.com/photos/691583/pexels-photo-691583.jpeg",
+  "https://images.pexels.com/photos/45170/kittens-cat-cat-puppy-rush-45170.jpeg",
+  "https://images.pexels.com/photos/1643456/pexels-photo-1643456.jpeg",
+  "https://images.pexels.com/photos/160755/kittens-cats-foster-playing-160755.jpeg",
+  "https://images.pexels.com/photos/3333538/pexels-photo-3333538.jpeg"
+]
+n = 0
+
 # Seed Item
-5.times do
+20.times do
   Item.create!(
     title: Faker::Creature::Cat.name,
     price: Faker::Number.decimal(l_digits: 2),
-    image_url: Faker::Internet.url(host: 'chatons.com'),
+    image_url: url_chatons[n],
     description: Faker::Hipster.sentence(word_count: 3)
   )
+  n += 1
 end
 
 
@@ -26,6 +51,6 @@ end
 5.times do
   User.create!(
     email: Faker::Internet.safe_email,
-    password: Faker::Internet.password(min_length: 6)
+    password: "chatons"
   )
 end
