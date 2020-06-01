@@ -34,3 +34,24 @@
 
   <% end %>
 </ul>
+
+<br/>
+<br/>
+<div class="card-columns border-info container ">
+  <% @items.each do | item | %>
+    <div class="card border-info text-white bg-primary mb-3">
+    <div class="card-header bg-light text-warning">
+        <%= item.image_url %>
+      
+    </div>
+    <div class="card-body">
+        Prix: 
+        <%= item.price %>
+    
+    </div>
+    </div>
+  <% end %>
+</div>
+
+
+</ul>
