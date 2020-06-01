@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  after_create :welcome_send
+
   def new
   end
 
@@ -10,7 +12,7 @@ class UsersController < ApplicationController
 
   def index
       @users = User.all
-  end 
+  end
 
   def edit
   end
@@ -19,5 +21,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
   end
 end
