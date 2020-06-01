@@ -1,6 +1,6 @@
 
 <div class="jumbotron">
-  <h1 class="display-3">Bienvenus à notre très mignon boutique de chatons!</h1>
+  <h1 class="display-3">Bienvenue sur notre très mignonne boutique de chatons!</h1>
   <p class="lead">Texte ici</p>
   <hr class="my-4">
   <p>Contenu par ici.</p>
@@ -9,49 +9,19 @@
   </p>
 </div>
 
-<ul>
-  <% if user_signed_in? %>
-    <li>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    </li>
-
-    <li>
-      Voici ton email : <%= current_user.email %>
-    </li>
-
-    <li>
-      <%= link_to "Edit email / password", edit_user_registration_path %>
-    </li>
-
-  <% else %>
-    <li>
-      <%= link_to "Sign in", new_user_session_path %>
-    </li>
-
-    <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-    </li>
-
-  <% end %>
-</ul>
 
 <br/>
 <br/>
 <div class="card-columns border-info container ">
   <% @items.each do | item | %>
-    <div class="card border-info text-white bg-primary mb-3">
-    <div class="card-header bg-light text-warning">
-        <%= item.image_url %>
-      
-    </div>
-    <div class="card-body">
-        Prix: 
-        <%= item.price %>
-    
-    </div>
+    <div class="card border-secondary mb-3" style="width: 18rem;">
+      <img class="card-img-top" src=<%= item.image_url %> alt="Cute cat image"> 
+      <div class="card-body">
+        <p class="card-text">Prix: <%= item.price %></p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>    
+      </div>
     </div>
   <% end %>
 </div>
-
 
 </ul>
