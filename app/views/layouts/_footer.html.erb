@@ -1,37 +1,25 @@
 <footer class="footer">
+<hr />
   <!-- Footer Elements -->
   <div class="container text-center">
-  <!-- Grid row-->
-    <div class="row">
-      <!-- Grid column -->
-      
-      <div class="col-md-12 pt-3">
-        <div class="mb-1 flex-center">
-            <!-- Facebook -->
-            <a href="http://www.facebook.com" class="a-secondary"><i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-            </a>
-            <!-- Twitter -->
-            <a href="http://www.twitter.com" class="a-secondary"><i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-            </a>
-            <!-- Google +-->
-            <a href="https://myaccount.google.com/profile" class="a-secondary"><i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-            </a>
-            <!--Linkedin -->
-            <a href="http://www.linkedin.com" class="a-secondary"><i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-            </a>
-            <!--Instagram-->
-            <a href="http://www.instagram.com" class="a-secondary"><i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-            </a>
-            <!--Pinterest-->
-            <a href="http://www.pinterest.com" class="a-secondary"><i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
-            </a>
-        </div>
-      </div>    
+      <!-- Grid row -->
+      <div class="row" style="justify-content: center;">
+        <% if user_signed_in?%>
+          <%= link_to "Mon panier", "#", class: "nav-link"%>
+          <%= link_to "Mon profil", user_path(current_user), class: "nav-link"%>
+        <%end%>
+        <%= link_to "L'équipe", "#", class: "nav-link"%>
+        <%= link_to "A propos de Chaton ®", "#", class: "nav-link"%>
+        <%= link_to "Mentions légales", "#", class: "nav-link"%>
+         <% if user_signed_in?%>
+          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link"%>
+        <%end%>
+      </div>
     </div>
-  </div>
+
   <!-- Copyright -->
   <div class="text-center pb-2">© 2020 Copyright:
-    <a href="#" class="a-secondary"> EventSharp.com</a>,
-    <a href="#" class="a-secondary"> ©Bootstrap</a>
+    <a href="https://www.thehackingproject.org/" class="a-secondary"> Session # 12</a>,
+    <a href="https://www.thehackingproject.org/" class="a-secondary"> The Hacking Project</a>
   </div>
 </footer>   
