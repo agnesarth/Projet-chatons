@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
-  after_create :welcome_send
 
   def new
+    @user = User.new
   end
 
   def create
+    @user = User.create(user_params)
   end
 
   def show
@@ -23,7 +24,9 @@ class UsersController < ApplicationController
   def destroy
   end
 
-  def welcome_send
-    UserMailer.welcome_email(self).deliver_now
+ private
+
+  def user_params
+    params.require(:user).permit(:email,:password)
   end
 end
