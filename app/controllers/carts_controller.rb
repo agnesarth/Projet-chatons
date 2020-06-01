@@ -31,6 +31,6 @@ class CartsController < ApplicationController
   private
 
   def cart_params
-    params.require(:cart).
+    params.require(:cart)
   end
 end

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Bienvenus</h1>
 
 
@@ -10,3 +11,30 @@
     <a class="btn btn-primary btn-lg" href="#" role="button">En savoir plus</a>
   </p>
 </div>
+=======
+<ul>
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    </li>
+
+    <li>
+      Voici ton email : <%= current_user.email %>
+    </li>
+
+    <li>
+      <%= link_to "Edit email / password", edit_user_registration_path %>
+    </li>
+
+  <% else %>
+    <li>
+      <%= link_to "Sign in", new_user_session_path %>
+    </li>
+
+    <li>
+      <%= link_to "Sign up", new_user_registration_path %>
+    </li>
+
+  <% end %>
+</ul>
+>>>>>>> 6085b8f6755fc5a0cca109ea075092dd7ce6ee02
