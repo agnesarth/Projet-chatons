@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def index
-      @users = User.all
+    @users = User.all
   end
 
   def edit
@@ -39,6 +39,6 @@ class UsersController < ApplicationController
  private
 
   def user_params
-    params.require(:user).permit(:email,:password)
+    params.require(:user).permit(:id, :email, :password)
   end
 end
