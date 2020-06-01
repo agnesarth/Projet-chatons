@@ -12,12 +12,13 @@
 
 <br/>
 <br/>
-<div class="card-columns border-info container ">
+<div class="card-columns border-info container">
   <% @items.each do | item | %>
-    <div class="card border-secondary mb-3" style="width: 18rem;">
+    <div class="card border-secondary mb-3">
       <img class="card-img-top" src=<%= item.image_url %> alt="Cute cat image"> 
       <div class="card-body">
-        <p class="card-text">Prix: <%= item.price %></p>
+      <h5 class="card-title"><%= item.title %></h5>
+        <p class="card-text">Prix: <%= item.price %> €</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>    
       </div>
     </div>
