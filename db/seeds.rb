@@ -41,7 +41,7 @@ n = 0
     title: Faker::Creature::Cat.name,
     price: Faker::Number.decimal(l_digits: 2),
     image_url: url_chatons[n],
-    description: Faker::Hipster.sentence(word_count: 3)
+    description: Faker::Hipster.sentence(word_count: 4)
   )
   n += 1
 end
