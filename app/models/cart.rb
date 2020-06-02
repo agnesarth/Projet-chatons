@@ -6,7 +6,7 @@ class Cart < ApplicationRecord
 
     def add_to_cart(item_id)
       if self.cart_items.find_by(item_id: item_id)
-        flash[:error] = "Alert! Animal trafficking! No more than one cat per cart allowed"
+        return
       else
         cart_item = Item.find(item_id)
         self.items << cart_item

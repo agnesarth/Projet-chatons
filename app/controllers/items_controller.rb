@@ -8,6 +8,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.find(params[:id])
     @cart = current_cart
+    if @cart.items.include?(@item)
+      flash[:error] = "Alert! Animal trafficking! Cat already in the cart, no more of this breed allowed"
+    end
     @cart.add_to_cart(params[:id])
     redirect_to cart_path(@cart.id)
   end
