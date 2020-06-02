@@ -25,3 +25,58 @@
 .btn-card {
   margin-left: 3px;
 }
+
+.card-show {
+  width: 65rem;
+  margin-top: 1rem;
+}
+
+.show-image {
+  max-width: 500px;
+  max-height: 450px;
+  box-shadow: black 0px 0px 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-block-show {
+  margin: 25px;
+}
+
+.col-md-5-show {
+  max-width: 100%;
+}
+
+.list-group {
+  margin-top: 25px;
+}
+
+.show-picture {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.button-back {
+  margin-top: 2rem;
+}
+
+.breadcrumb-container li {
+  display: inline-block;
+}
+
+.item-breadcrumb {
+  color: #AEA7A1; 
+}
+
+.item-breadcrumb:hover {
+  color: #868e96; 
+}
+
+.button-back {
+  padding-left: 1.5rem;
+}
+
+ol {
+  padding-inline-start: 0;
+}
