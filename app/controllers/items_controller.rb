@@ -1,11 +1,20 @@
 class ItemsController < ApplicationController
-
+  #before_action :current_cart, only: [:create]
 
   def new
     @item = Item.new
   end
 
   def create
+    @item = Item.find(params[:id])
+    @cart = current_cart
+
+    @cart.items << @item
+    p "*************"
+    p @cart
+    p @item.errors.messages
+    p "*************"
+    redirect_to cart_path(@cart.id)
   end
 
   def show
@@ -14,7 +23,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    @cart = Cart.new
+    @cart = current_cart
   end
 
   def edit
@@ -35,5 +44,13 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:title, :price, :image_url, :description)
+  end
+
+  def current_cart
+      Cart.find(session[:cart_id], user: current_user)
+    rescue ActiveRecord::RecordNotFound
+      cart = Cart.create(user: current_user)
+      session[:cart_id] = cart.id
+      cart
   end
 end
