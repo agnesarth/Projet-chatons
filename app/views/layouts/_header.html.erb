@@ -22,7 +22,8 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to cart_path(current_user.cart.id), class:"nav-link" do %>
+            <% cart = Cart.find_by_user_id(current_user.id) %>
+            <%= link_to cart_path(cart.id), class:"nav-link" do %>
             <i class="fas fa-shopping-basket"></i> Mon panier
             <% end %>
           </li>
