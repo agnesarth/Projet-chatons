@@ -1,5 +1,16 @@
 <div class = "container-fluid">
 
+  <div class="button-back">
+    <ol class="breadcrumb-container">
+      <li class="breadcrumb-item">
+        <%= link_to "Photographies", root_path, class:"item-breadcrumb" %>
+      </li>
+      <li class="breadcrumb-item">
+        <%= link_to @item.title, item_path(@item), class:"item-breadcrumb" %>
+      </li>
+    </ol>
+  </div>
+
   <div class="container">
     <div class="row display-flex show-picture">
       <div class="col col-md-7">
@@ -22,12 +33,5 @@
         </div>
       </div>
     </div>
-
-    <div class="mt-5 offset-1">
-      <%= link_to "Retour", :back %>
-    </div>
   </div>
-
-
-
 </div>

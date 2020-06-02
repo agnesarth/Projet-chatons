@@ -31,10 +31,6 @@
   margin-top: 1rem;
 }
 
-.card-header {
-  padding: 1.25rem;
-}
-
 .show-image {
   max-width: 500px;
   max-height: 450px;
@@ -57,5 +53,30 @@
 }
 
 .show-picture {
-  margin-top: 60px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.button-back {
+  margin-top: 2rem;
+}
+
+.breadcrumb-container li {
+  display: inline-block;
+}
+
+.item-breadcrumb {
+  color: #AEA7A1; 
+}
+
+.item-breadcrumb:hover {
+  color: #868e96; 
+}
+
+.button-back {
+  padding-left: 1.5rem;
+}
+
+ol {
+  padding-inline-start: 0;
 }
