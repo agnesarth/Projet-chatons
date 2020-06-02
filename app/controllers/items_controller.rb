@@ -9,10 +9,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @cart = current_cart
     @cart.add_to_cart(params[:id])
-    p "*************"
-    p @cart
-    p @item.errors.messages
-    p "*************"
     redirect_to cart_path(@cart.id)
   end
 
@@ -35,7 +31,9 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
-    @item.destroy
+    @cart = current_cart
+    @cart.items.destroy(params[:id])
+    redirect_to cart_path(@cart.id)
   end
 
   private
