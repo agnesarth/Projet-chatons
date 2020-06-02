@@ -12,8 +12,6 @@ class CartsController < ApplicationController
 
   def show
     @cart = Cart.find(params[:id])
-    p @cart.items.length
-    p "**************"
   end
 
   def index
