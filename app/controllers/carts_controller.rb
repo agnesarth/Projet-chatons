@@ -1,11 +1,13 @@
 class CartsController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user!
+  before_action :current_cart
 
   def new
     @cart = Cart.new
   end
 
   def create
+    @cart = current_cart
   end
 
   def show
@@ -14,7 +16,7 @@ class CartsController < ApplicationController
 
   def index
     @carts = Cart.all
-  end 
+  end
 
   def edit
     @cart = Cart.find(params[:id])
@@ -35,4 +37,5 @@ class CartsController < ApplicationController
   def cart_params
     params.require(:cart)
   end
+
 end

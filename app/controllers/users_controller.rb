@@ -30,15 +30,10 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
-  private
-
-  def user_params
-    params.require(:user).permit(:email)
-  end
-
  private
 
   def user_params
     params.require(:user).permit(:id, :email, :password)
   end
+  
 end
