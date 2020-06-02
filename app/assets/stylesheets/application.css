@@ -80,3 +80,12 @@
 ol {
   padding-inline-start: 0;
 }
+
+.user-email {
+  color: #868e96;
+  margin-left: 15px;
+}
+
+.order-button {
+  margin-left: 3px;
+}
