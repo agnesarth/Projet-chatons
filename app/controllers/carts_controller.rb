@@ -7,16 +7,19 @@ class CartsController < ApplicationController
   end
 
   def create
-    @cart = current_cart
+    @cart = Cart.create(user: current_user)
+    p @cart
+    @cart.add_to_cart(item_id)
+    redirect_to cart_path(@cart.id)
   end
 
   def show
     @cart = Cart.find(params[:id])
   end
 
-  def index
-    @carts = Cart.all
-  end
+  #def index
+    #@carts = Cart.all
+  #end
 
   def edit
     @cart = Cart.find(params[:id])
@@ -24,7 +27,10 @@ class CartsController < ApplicationController
 
   def update
     @cart = Cart.find(params[:id])
-    @cart.update(cart_params)
+    p @cart
+    @cart.add_to_cart(item_id)
+    p @cart
+    redirect_to cart_path(@cart.id)
   end
 
   def destroy

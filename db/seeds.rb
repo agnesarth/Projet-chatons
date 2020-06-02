@@ -38,10 +38,10 @@ n = 0
 # Seed Item
 20.times do
   Item.create!(
-    title: ['Tinklebell','Pussycat','Smokey'],
+    title: Faker::GreekPhilosophers.name,
     price: Faker::Number.decimal(l_digits: 2),
     image_url: url_chatons[n],
-    description: Faker::Hipster.sentence(word_count: 3)
+    description: Faker::Hipster.sentence(word_count: 4)
   )
   n += 1
 end

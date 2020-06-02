@@ -24,6 +24,7 @@
    --teal: #20c997;
    --cyan: #17a2b8;
    --white: #fff;
+   --off-white:#f8f9fa;
    --gray: #868e96;
    --gray-dark: #333;
    --primary: #E95420;
@@ -69,7 +70,7 @@
    line-height: 1.5;
    color: #333;
    text-align: left;
-   background-color: #fff;
+   background-color: #f8f9fa;
  }
  
  [tabindex="-1"]:focus:not(:focus-visible) {

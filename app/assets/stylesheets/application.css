@@ -17,3 +17,11 @@
 .jumbotron {
   margin-bottom: 70px;
 }
+
+.alert {
+  margin-bottom: 0px;
+}
+
+.btn-card {
+  margin-left: 3px;
+}
