@@ -1,7 +1,3 @@
-# Boutique chatons
+# Boutique chatons :smirkey_cat:
 
-## Instructions
-
-## Functionalités
-
-My first commit branch
+Visit us on https://boiling-inlet-79758.herokuapp.com
