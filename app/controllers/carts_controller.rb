@@ -1,7 +1,6 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
-  before_action :current_cart
-  #before_action :same_user, only: [:show]
+
 
   def new
     @cart = Cart.new
@@ -12,8 +11,9 @@ class CartsController < ApplicationController
   end
 
   def show
-    @cart = Cart.find_by_user_id(current_user.id)
-    p @cart.errors.messages
+    @cart = Cart.find(params[:id])
+    p @cart.items.length
+    p "**************"
   end
 
   def index
@@ -39,19 +39,6 @@ class CartsController < ApplicationController
 
   def cart_params
     params.require(:cart)
-  end
-
-  def current_cart
-    if !session[:cart_id].nil?
-      current_cart = Cart.find_by_user_id(current_user.id)
-    else
-      current_cart = Cart.create(user: current_user)
-    end
-  end
-
-  def same_user
-    current_user.cart.id == current_cart.id
-    redirect_to cart_path(current_cart.id)
   end
 
 end
