@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <%=link_to "Home", root_path, class:"nav-link"%>
+          <%=link_to "Accueil", root_path, class:"nav-link"%>
         </li>
       </ul>
       <ul class="navbar-nav">
@@ -21,18 +21,19 @@
             <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-secondary" %>
           </li>
         <% else %>
+        <% if @cart.nil? %>
           <li class="nav-item">
-            <% if @cart.nil? %>
               <%= link_to new_cart_path, class:"nav-link" do %>
               <i class="fas fa-shopping-basket"></i> Mon panier
               <% end %>
-            <% end %>
-<!--            <% if !@cart.nil? %>
-              <%= link_to cart_path(@cart.id), class:"nav-link" do %>
+          </li>
+        <%else%>
+          <li class="nav-item">
+              <%= link_to cart_path(current_user.cart_id), class:"nav-link" do %>
               <i class="fas fa-shopping-basket"></i> Mon panier
               <% end %>
-            <% end %> -->
           </li>
+        <% end %>
           <div class="nav-item dropdown-toggle nav-link" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paramètres</div>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" >
               <ul>
