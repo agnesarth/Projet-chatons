@@ -8,8 +8,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.find(params[:id])
     @cart = current_cart
-
-    @cart.items << @item
+    @cart.add_to_cart(params[:id])
     p "*************"
     p @cart
     p @item.errors.messages
@@ -23,7 +22,6 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    @cart = current_cart
   end
 
   def edit
@@ -47,10 +45,12 @@ class ItemsController < ApplicationController
   end
 
   def current_cart
-      Cart.find(session[:cart_id], user: current_user)
-    rescue ActiveRecord::RecordNotFound
-      cart = Cart.create(user: current_user)
-      session[:cart_id] = cart.id
-      cart
+    if current_user.cart.present?
+      current_cart = Cart.find_by_user_id(current_user.id)
+    else
+      current_cart = Cart.create(user: current_user)
+      session[:cart_id] = current_cart.id
+      current_cart
+    end
   end
 end

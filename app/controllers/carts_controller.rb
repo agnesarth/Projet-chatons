@@ -7,9 +7,9 @@ class CartsController < ApplicationController
   end
 
   def create
-    @cart = current_cart
-    @cart.user = current_user
-    @cart.add_to_cart(id)
+    @cart = Cart.create
+    #@cart.user = current_user
+    #@cart.add_to_cart(id)
     #redirect_to cart_path(@cart.id)
   end
 
