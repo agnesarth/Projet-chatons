@@ -44,8 +44,8 @@ class CartsController < ApplicationController
   end
 
   def current_cart
-    if session[:cart_id]
-      current_cart = Cart.find(session[:cart_id], user: current_user)
+    if !session[:cart_id].nil?
+      current_cart = Cart.find_by_user_id(current_user.id)
     else
       current_cart = Cart.create(user: current_user)
     end
