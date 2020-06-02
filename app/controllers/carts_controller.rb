@@ -1,8 +1,9 @@
 class CartsController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user!
 
   def new
     @cart = Cart.new
+    @cart.user_id = authenticate_user.id
   end
 
   def create
@@ -14,7 +15,7 @@ class CartsController < ApplicationController
 
   def index
     @carts = Cart.all
-  end 
+  end
 
   def edit
     @cart = Cart.find(params[:id])

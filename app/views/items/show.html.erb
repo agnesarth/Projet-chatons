@@ -1,6 +1,6 @@
 <div class = "container-fluid">
-  <div class = "row offset-4">
-    <div class="card-md-4" style="width: 25rem">
+  <div class = "row offset-1">
+    <div class="card-md-4" style="width: 65rem; margin-top: 1rem">
       <img class="card-img-top" src=<%= @item.image_url %> alt="Cute cat image"> 
       <div class="card-body">
         <h5 class="card-title"><%= @item.title %></h5>
@@ -10,9 +10,9 @@
         <li class="list-group-item">Prix de la carte : <%= @item.price%> € HT </li>
         <li class="list-group-item">Mise en ligne le : <%= @item.created_at.strftime(" %m/%d/%Y") %> </li>
       </ul>
-      <div class="card-body">
+      <div class="card-body text-center">
         <%= link_to "Ajouter au panier", new_cart_path, class: "btn btn-primary"%>
-         <%= link_to "Ajouter aux favoris", "#", class: "btn btn-secondary"%>
+         <%= link_to "Ajouter aux favoris", new_cart_path, class: "btn btn-secondary"%>
       </div>
     </div>
   </div>
