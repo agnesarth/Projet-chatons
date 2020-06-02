@@ -3,6 +3,7 @@ class CartsController < ApplicationController
 
   def new
     @cart = Cart.new
+    @cart.user_id = current_user.id
   end
 
   def create
