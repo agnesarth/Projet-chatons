@@ -18,10 +18,10 @@
   margin-bottom: 70px;
 }
 
-.card {
-  width: 22rem;
-}
-  
 .alert {
   margin-bottom: 0px;
+}
+
+.btn-card {
+  margin-left: 3px;
 }
