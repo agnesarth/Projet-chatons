@@ -63,7 +63,7 @@ end
 
 # Database
 gem 'table_print'
-gem 'faker'
+gem 'faker', :git => 'https://github.com/ZeddBox/faker_fr.git', :branch => 'master'
 
 # Security
 gem 'better_errors'
