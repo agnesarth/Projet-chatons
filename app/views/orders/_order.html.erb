@@ -1,0 +1,11 @@
+<tr id="<%= user.order.id %>">
+  <th scope="row">
+  <%= user.order.id %></th>
+  <td>
+    <% if user.order.read == true %>
+      <%= link_to user.order.id, user_order_path(order), remote: true %>
+    <% else %>
+      <strong><%= link_to user.order.id, user_order_path(order), remote: true %></strong>
+    <% end %>
+  </td>
+</tr>

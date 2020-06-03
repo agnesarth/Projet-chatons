@@ -10,7 +10,7 @@
         </div>
         <div class="actions my-3">
           <%= link_to "Editer", edit_user_registration_path(@user), class:"btn btn-primary" %>
-          <%=link_to "Voir mes commandes", orders_path, class:"btn btn-outline-primary order-button" %>
+          <%=link_to "Voir mes commandes", user_orders_path(current_user), class:"btn btn-outline-primary order-button" %>
         </div>
     </div>    
   </div>
