@@ -1,5 +1,16 @@
 # Boutique chatons :smirk_cat:
 
+
+<dl>
+  <dt>Functionalities</dt>
+  <dd>Login & log out</dd>
+  <dd>Retrieve password</dd>
+  <dd>Update user info</dd>
+  <dd>Add & remove photos from cart</dd>
+  <dd>Pay for cart (checkout)</dd>
+  <dd></dd>
+</dl>
+
 ## Instructions
 
 1. ```git clone https://github.com/agnesarth/Projet-chatons/tree/master```
