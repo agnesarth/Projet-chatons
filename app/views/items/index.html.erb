@@ -16,7 +16,7 @@
       <% if item.photo.attached? %>
       <%= image_tag item.photo , class: "card-img-top" %>
       <% else %>
-      <img class="card-img-top" src=<%= item.image_url %> />
+      <img class="card-img-top" src=<%= item.image_url %> >
       <% end %>
       <div class="card-body">
         <p class="card-text "><b> <%= item.price %> €</b></p>
