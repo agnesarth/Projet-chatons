@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  
   def current_cart
     if current_user.cart.present?
       current_cart = Cart.find_by_user_id(current_user.id)
