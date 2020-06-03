@@ -1,12 +1,13 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
 
+
   def new
     @cart = Cart.new
-    @cart.user_id = current_user.id
   end
 
   def create
+    @cart = Cart.create
   end
 
   def show
@@ -23,7 +24,8 @@ class CartsController < ApplicationController
 
   def update
     @cart = Cart.find(params[:id])
-    @cart.update(cart_params)
+    @cart.add_to_cart(item_id)
+    redirect_to cart_path(@cart.id)
   end
 
   def destroy
@@ -36,4 +38,5 @@ class CartsController < ApplicationController
   def cart_params
     params.require(:cart)
   end
+
 end

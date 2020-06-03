@@ -4,13 +4,23 @@ class Cart < ApplicationRecord
     has_many :items, through: :cart_items
     belongs_to :user
 
+    def add_to_cart(item_id)
+      if self.cart_items.find_by(item_id: item_id)
+        return
+      else
+        cart_item = Item.find(item_id)
+        self.items << cart_item
+        self.save
+      end
+    end
 
-    def price_total
-        added_total = 0
-        Items.where(Items.cart_items_id == this.cart_items_id).each do |item|
-            added_total += item.price
+    def total_price
+        total = 0
+        #Item.all.where('id = ?', CartItem.find_by(cart_id: self.id).item_id).each do |item|
+        Item.where(id: self.cart_items.each.pluck(:item_id)).each do |item|
+            total += item.price
         end
-        return added_total
+        return total
     end
 
 
