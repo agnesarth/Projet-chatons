@@ -1,6 +1,14 @@
 # Boutique chatons :smirk_cat:
 
-## Functionalities
+## Table of Contents
+
+- [Features](#features)
+- [Instructions](#instructions)
+- [Versioning](#versioning)
+- [Team](#team)
+
+
+## Features
 <dl>
   <dt>Non-registered users</dt>
   <dd>Sign up</dd>
@@ -35,7 +43,7 @@
 - **Option 3**
     - 👯 Visit us online :arrow_right: https://boiling-inlet-79758.herokuapp.com
 
-## Project versioning
+## Versioning
 
 - Ruby ``2.5.1``
 
@@ -45,11 +53,10 @@
 
 - Bundler ``2.1.4``
 
-## The Team
+## Team
 
 1. [Agnès Arthaud](https://github.com/agnesarth)
-2. [Jhonnatan Rangel](https://github.com/agnesarth)
+2. [Jhonnatan Rangel](https://github.com/jhon-ran)
 3. [Lucile Gentaz](https://github.com/lgentaz) 
 4. [Milena Lazzaretti](https://github.com/mil3zh) 
 5. [Raphaël Delannay](https://github.com/Raphael-dln)
-
