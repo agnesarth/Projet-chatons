@@ -1,11 +1,18 @@
 class ItemsController < ApplicationController
-
+  #before_action :current_cart, only: [:create]
 
   def new
     @item = Item.new
   end
 
   def create
+    @item = Item.find(params[:id])
+    @cart = current_cart
+    if @cart.items.include?(@item)
+      flash[:error] = "Alert! Animal trafficking! Cat already in the cart, no more of this breed allowed"
+    end
+    @cart.add_to_cart(params[:id])
+    redirect_to cart_path(@cart.id)
   end
 
   def show
@@ -27,7 +34,9 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
-    @item.destroy
+    @cart = current_cart
+    @cart.items.destroy(params[:id])
+    redirect_to cart_path(@cart.id)
   end
 
   private
@@ -35,4 +44,5 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:title, :price, :image_url, :description)
   end
+
 end
