@@ -47,6 +47,10 @@ class OrdersController < ApplicationController
   def show
     @user = current_user
     @order= Order.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to user_order_path }
+      format.js { }
+    end
   end
 
   def index

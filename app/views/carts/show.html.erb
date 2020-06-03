@@ -11,26 +11,21 @@
 
 <% @cart.items.each do |item| %>
   <div class="container">
-      <div class="row m-1">
-        <div class="col-xs-4 mt-auto mb-auto mr-5">
-          <img src=<%= item.image_url %> alt="" style="width: 80px; height: 100px; object-fit: cover;" class="show-image rounded"/>
-        </div>
-
-          <div class="card-body pt-0">
-
-            <h4 class="card-title"><%= item.title %></h4>
-            <h6 class="card-subtitle"><b><%= item.price%> €<b></h6>
-          </div>
-
-        <div class="col-xs-4">
-            <%= link_to "javascript:void(0)", class: "btn btn-primary btn-sm" do %><i class="fa fa-heart"></i><% end %>
+    <div class="row m-1">
+      <div class="col-xs-4 mt-auto mb-auto mr-5">
+        <img src=<%= item.image_url %> alt="" style="width: 80px; height: 100px; object-fit: cover;" class="show-image rounded"/>
+      </div>
+      <div class="card-body pt-0">
+        <h4 class="card-title"><%= item.title %></h4>
+        <h6 class="card-subtitle"><b><%= item.price%> €<b></h6>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to "javascript:void(0)", class: "btn btn-primary btn-sm" do %><i class="fa fa-heart"></i><% end %>
         <%= link_to item_path(item.id), method: :delete, class: "btn btn-outline-dark btn-sm" do %><i class="fa fa-trash"></i><% end %>
-          </div>
-
-
-        </div>
-</div>
-<hr style="width: 80%">
+      </div>
+    </div>
+  </div>
+  <hr style="width: 80%">
 <% end %>
 
 

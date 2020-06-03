@@ -1,8 +1,11 @@
 <tr id="<%= order.id %>">
-  <th scope="row">
+  <th scope="row" class="text-center">
     <%= order.id %>
   </th>
-  <td>
-   <%= link_to "commande n°#{order.id} du #{order.created_at}", user_order_path(current_user, order), remote: true %>
- </td>
+  <td class="text-center">
+    <%= link_to "Le #{order.created_at.strftime("%m/%d/%Y à %H:%M")}", user_order_path(current_user, order), remote: true %>
+  </td>
+  <td class="text-center">
+    <%= order.total_price %> €
+  </td>
 </tr>
