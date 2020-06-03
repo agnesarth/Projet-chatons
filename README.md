@@ -17,17 +17,23 @@
 
 ## Instructions
 
-1. ```git clone https://github.com/agnesarth/Projet-chatons/tree/master```
-2. ```bundle install```
-3. ```rails db:create```
-4. ```rails db:migrate```
-5. ```rails db:seed```
-6. ```rails db:seed```
-7. Go to http://localhost:3000
-8.  Have fun :heartpulse:
+- **Option 1**
+    - 🍴 Fork this repo & **HACK AWAY!** 🔨🔨🔨
+    
+- **Option 2**
+    - 👯 Clone this repo to your local machine using `git clone https://github.com/agnesarth/Projet-chatons/tree/master`
 
+    ### Steps
+- `bundle install`
+- `rails db:create`
+- `rails db:migrate`
+- `rails db:seed`
+- `rails db:seed`
+- Go to http://localhost:3000
+- Have fun :heartpulse:
 
-Visit us online :arrow_right: https://boiling-inlet-79758.herokuapp.com
+- **Option 3**
+    - 👯 Visit us online :arrow_right: https://boiling-inlet-79758.herokuapp.com
 
 ## Project versioning
 
