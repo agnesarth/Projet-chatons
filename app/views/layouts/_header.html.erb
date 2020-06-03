@@ -33,6 +33,7 @@
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" >
               <ul>
                 <%= link_to "Mon profil", user_path(current_user), class:"dropdown-item" %>
+                 <%=link_to "Mes commandes", user_orders_path(current_user), class:"dropdown-item" %>
                 <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
               </ul>
             </div>
