@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
 
   def welcome_email(user)
     @user = user
-    @url = "https://boiling-inlet-79758.herokuapp.com/"
+    @url = "https://arcane-basin-51216.herokuapp.com/"
     mail(to: @user.email, subject: "Bienvenue sur Chatons!")
   end
 end

@@ -12,7 +12,7 @@
 
     <%@order.items.each do |item|%>
     <p><%=item.title%></p>
-    <p><%=item.image_url%></p>
+    <img src=<%= item.image_url %> alt="Cute cat image">
     <%end%>
 
   </body>
