@@ -6,13 +6,13 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.find(params[:id])
-    @cart = current_cart
-    if @cart.items.include?(@item)
-      flash[:error] = "Alert! Animal trafficking! Cat already in the cart, no more of this breed allowed"
+    @item = Item.create!(item_params)
+    @item.photo.attach(params[:photo])
+    p @item.errors.messages
+    if @item.save
+      p @item.errors.messages
+      redirect_to root_path
     end
-    @cart.add_to_cart(params[:id])
-    redirect_to cart_path(@cart.id)
   end
 
   def show
@@ -29,7 +29,12 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.update(item_params)
+    @cart = current_cart
+    if @cart.items.include?(@item)
+      flash[:error] = "Alert! Animal trafficking! Cat already in the cart, no more of this breed allowed"
+    end
+    @cart.add_to_cart(params[:id])
+    redirect_to cart_path(@cart.id)
   end
 
   def destroy
@@ -42,7 +47,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:title, :price, :image_url, :description)
+    params.permit(:title, :price, :description, :photo)
   end
 
   def current_cart

@@ -74,3 +74,4 @@ gem 'sendgrid-ruby'
 gem 'devise'
 gem 'rails-i18n'
 gem 'stripe'
+gem 'aws-sdk-s3', require: false
