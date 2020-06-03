@@ -31,17 +31,26 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @cart = current_cart
     if @cart.items.include?(@item)
-      flash[:error] = "Alert! Animal trafficking! Cat already in the cart, no more of this breed allowed"
+      flash[:alert] = "Alert! Animal trafficking! Cat already in the cart, no more of this breed allowed"
     end
     @cart.add_to_cart(params[:id])
-    redirect_to cart_path(@cart.id)
+
+    respond_to do |format|
+      format.html  { redirect_to cart_path(@cart.id) }
+      format.js  { }
+    end
   end
 
   def destroy
     @item = Item.find(params[:id])
     @cart = current_cart
     @cart.items.destroy(params[:id])
-    redirect_to cart_path(@cart.id)
+
+
+    respond_to do |format|
+      format.html  { redirect_to cart_path(@cart.id) }
+      format.js  { }
+    end
   end
 
   private
