@@ -14,6 +14,16 @@
 
 Visit us online :arrow_right: https://boiling-inlet-79758.herokuapp.com
 
+## Project versioning
+
+- Ruby ``2.5.1``
+
+- Rails ``5.2.4.3``
+
+- PostGreSQL ``9.5.21``
+
+- Bundler ``2.1.4``
+
 ## The Team
 
 1. [Agnès Arthaud](https://github.com/agnesarth)
