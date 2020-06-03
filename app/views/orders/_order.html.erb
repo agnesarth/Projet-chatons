@@ -1,0 +1,8 @@
+<tr id="<%= order.id %>">
+  <th scope="row">
+    <%= order.id %>
+  </th>
+  <td>
+   <%= link_to "commande n°#{order.id} du #{order.created_at}", user_order_path(current_user, order), remote: true %>
+ </td>
+</tr>

@@ -45,11 +45,13 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+    @user = current_user
+    @order= Order.find(params[:id])
   end
 
   def index
-    @orders = Order.all
+    @user= current_user
+    @user.orders = Order.all
   end
 
   private
