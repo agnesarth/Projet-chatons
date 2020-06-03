@@ -1,9 +1,9 @@
-Salut <%= @user.email %>,
-Bienvenue sur Chatons  !
+Nouvelle demande via le formulaire de contact
 ==========================================================
 
-Tu t'es inscrit sur Chatons en utilisant l'e-mail suivant : <%= @user.email %>.
+<%=@user%> vient d'envoyer le message suivant:
 
-Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
+<%=@body%>
 
-À très vite sur Chatons !
+Pour lui répondre: <%= @user_email%> 
+      

@@ -9,7 +9,6 @@
   </div>
 <% end %>
 
-
 <% @cart.items.each do |item| %>
   <div class="container">
     <div class="row m-1">
@@ -28,9 +27,6 @@
   </div>
   <hr style="width: 80%">
 <% end %>
-
-
-
 
 <div class="container text-center">
   <%= form_tag user_orders_path(current_user) do %>
