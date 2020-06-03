@@ -1,35 +1,17 @@
 <div class="container mt-5 mb-4 text-center">
-<div class="my-5 alert col-md-8 offset-md-2 shadow p-3 mb-5 bg-white rounded">
-<i class="far fa-paper-plane fa-3x mt-3 mb-4 border shadow p-3 rounded-circle"></i>
-
-
-  <div class="text-center my-2">
-    <%= form_for('#', url: '#', html: { method: :put }) do |f| %>
-    <div class="form-row text-center mx-4">
-      <div class="mb-4 col-md-6">
-        <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "nom", class:"form-control" %>
-      </div>
-      <div class="mb-4 col-md-6">
-        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "prénom", class:"form-control" %>
-      </div>
-    </div>
-    <div class="form-row text-center mx-4">
-      <div class="mb-4 col-md-8">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-user"></i></span>
+    <div class="my-5 alert col-md-8 offset-md-2 shadow p-3 mb-5 bg-white rounded">
+    <i class="far fa-paper-plane fa-3x mt-3 mb-4 border shadow p-3 rounded-circle"></i>
+        <div class="text-center my-2">
+            <%= form_tag :action => 'contactform', :controller => 'static_page' do%>
+                <div class="form-row text-center mx-4">
+                    <div class="mb-4 col-md-6">
+                        <%= text_field_tag :last_name, options = {class: 'form-control'}  %>
+                    </div>
+                    <div class="mb-4 col-md-6">
+                        <%= text_field_tag 'first_name' %>
+                    </div>
+                </div>
+            <% end %>
         </div>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class:"form-control" %>
-      </div>
-      </div>
-      <div class="actions offset-1">
-        <%= f.submit "Envoyer", class:"btn btn-primary" %>
-      </div>
     </div>
-    <div class="form-group mx-4">
-        <textarea name="message" class="form-control" placeholder="message" rows="4"></textarea>
-        <div class="help-block with-errors"></div>
-      </div>
-    <% end %>
-  </div>
 </div>
