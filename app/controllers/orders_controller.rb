@@ -1,9 +1,46 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
 
   def create
+    @cart = Cart.find(current_cart.id)
+    @user = User.find(current_user.id)
+    @amount = (@cart.total_price * 100).to_i
 
-    @cart.current_cart
+    @customer = Stripe::Customer.create({
+      email: params[:stripeEmail],
+      source: params[:stripeToken],
+    })
 
+    @charge = Stripe::Charge.create({
+      customer: @customer.id,
+      amount: @amount,
+      description: 'Rails Stripe customer',
+      currency: 'eur',
+    })
+    
+    @order = Order.new(user: @user)
+    @cart.items.each do |item|
+      @order.add_to_order(item.id)
+    end
+
+    if @order.save
+      @cart.destroy
+      flash[:success] = "Commande enregistrée."
+      redirect_to root_path
+    else
+      message = []
+      if @cart.errors.any?
+        @cart.errors.full_message.each do |message|
+          messages << message
+        end
+      flash[:error] = messages
+      redirect_to root_path
+      end
+    end
+  
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to root_path
 
   end
 
@@ -19,16 +56,6 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order)
-  end
-
-  def current_cart
-    if current_user.cart.present?
-      current_cart = Cart.find_by_user_id(current_user.id)
-    else
-      current_cart = Cart.create(user: current_user)
-      session[:cart_id] = current_cart.id
-      current_cart
-    end
   end
 
 end
