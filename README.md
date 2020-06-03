@@ -1,8 +1,12 @@
 # Boutique chatons :smirk_cat:
 
-
+## Functionalities
 <dl>
-  <dt>Functionalities</dt>
+  <dt>Non-registered users</dt>
+  <dd>Sign up</dd>
+  <dd>See photos</dd>
+
+  <dt>Registered users</dt>
   <dd>Login & log out</dd>
   <dd>Retrieve password</dd>
   <dd>Update user info</dd>
