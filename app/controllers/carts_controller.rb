@@ -8,6 +8,7 @@ class CartsController < ApplicationController
 
   def create
     @cart = Cart.create
+
   end
 
   def show
