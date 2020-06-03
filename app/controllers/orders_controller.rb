@@ -45,8 +45,9 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = User.find(current_user.id)
     @order= Order.find(params[:id])
+    @order.update(read: true)
     respond_to do |format|
       format.html { redirect_to user_order_path }
       format.js { }
@@ -54,8 +55,9 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @user= current_user
-    @user.orders = Order.all
+    @user = User.find(current_user.id)
+    @order= Order.all
+
   end
 
   private

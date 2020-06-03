@@ -136,3 +136,11 @@ section {
   padding-top: 100px;
   padding-bottom: 20px;
 }
+
+.table-order-show {
+  margin-top: 40px;
+}
+
+.card-body-show {
+  max-width: 450px;
+}
