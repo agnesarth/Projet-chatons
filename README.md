@@ -1,5 +1,7 @@
 # Boutique chatons :smirk_cat:
 
+> Cat lovers favorite place to get cute photos
+
 ## Table of Contents
 
 - [Features](#features)
@@ -35,7 +37,6 @@
 - `bundle install`
 - `rails db:create`
 - `rails db:migrate`
-- `rails db:seed`
 - `rails db:seed`
 - Go to http://localhost:3000
 - Have fun :heartpulse:
