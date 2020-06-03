@@ -1,5 +1,5 @@
 # Boutique chatons :smirk_cat:
-<a href="http://fvcproductions.com"><img src="https://github.com/jhon-ran/logo_chatons/blob/master/images/chatons.jpg" width="200" height="200" title="FVCproductions" alt="FVCproductions"></a>
+<a href="#"><img src="https://github.com/jhon-ran/logo_chatons/blob/master/images/chatons.jpg" width="200" height="200" title="Chatons logo" alt="logo"></a>
 > Cat lover's favorite place to get cute photos
 
 ## Table of Contents
