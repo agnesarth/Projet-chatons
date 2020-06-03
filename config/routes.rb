@@ -7,5 +7,12 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
 
+  resources :items, only: [:new] do
+    resources :photos, only: [:new, :create]
+  end
+
+  #resources :items do
+    #post 'shopping#cart'
+  #end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

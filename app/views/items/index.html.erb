@@ -6,20 +6,25 @@
   <p>Oui on le sait, les chats c’est trop mignon. Des images de chatons d'un qualité jamais égalé </p>
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="users/sign_in" role="button">Trouver un chaton</a>
+    <a class="btn btn-outline-primary btn-lg" href="items/new" role="button">Ajouter un chaton</a>
   </p>
 </div>
 
 <div class="card-columns border-info container">
   <% @items.each do | item | %>
     <div class="card border-secondary mb-4">
-      <img class="card-img-top" src=<%= item.image_url %> alt="Cute cat image">
+      <% if item.photo.attached? %>
+      <%= image_tag item.photo , class: "card-img-top"%>
+      <% else %>
+      <img class="card-img-top" src=<%= item.image_url %> alt="Cute cat image"/>
+      <% end %>
       <div class="card-body">
         <p class="card-text "><b> <%= item.price %> €</b></p>
           <div class="d-flex justify-content-between">
           <%= link_to "Voir le produit", item_path(item), class: "btn btn-outline-primary btn-sm mr-3"%>
           <%= link_to "javascript:void(0)", class: "btn btn-primary btn-sm ml-auto" do %><i class="fa fa-heart"></i><% end %>
           <% if user_signed_in? %>
-          <%= link_to items_path(id: item.id), method: :post, class: "btn btn-primary btn-sm ml-1" do %><i class="fa fa-shopping-cart"></i><% end %>
+          <%= link_to item_path(id: item.id), method: :put, class: "btn btn-primary btn-sm ml-1" do %><i class="fa fa-shopping-cart"></i><% end %>
           <% else %>
           <%= link_to new_cart_path, class: "btn btn-primary btn-sm" do %><i class="fa fa-shopping-cart"></i><% end %>
           <% end %>
