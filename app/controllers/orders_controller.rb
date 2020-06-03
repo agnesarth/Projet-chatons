@@ -25,6 +25,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       @cart.destroy
+      OrderMailer.order_completed(@order).deliver
       flash[:success] = "Commande enregistrée."
       redirect_to root_path
     else
