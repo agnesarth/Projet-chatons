@@ -23,7 +23,7 @@
             <p class="card-text"><%= @item.description %> </p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Prix de la photographie : <%= @item.price%> € </li>
+            <li class="list-group-item">Prix de la photographie : <%= sprintf('%.2f', @item.price) %> € </li>
             <li class="list-group-item">Mise en ligne le : <%= @item.created_at.strftime(" %m/%d/%Y") %> </li>
           </ul>
           <div class="card-body text-center">
