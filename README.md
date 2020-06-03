@@ -1,6 +1,6 @@
 # Boutique chatons :smirk_cat:
-
-> Cat lovers favorite place to get cute photos
+<a href="http://fvcproductions.com"><img src="https://github.com/jhon-ran/logo_chatons/blob/master/images/chatons.jpg" width="200" height="200" title="FVCproductions" alt="FVCproductions"></a>
+> Cat lover's favorite place to get cute photos
 
 ## Table of Contents
 
