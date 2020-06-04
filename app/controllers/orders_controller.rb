@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
       description: 'Rails Stripe customer',
       currency: 'eur',
     })
-    
+
     @order = Order.new(user: @user)
     @cart.items.each do |item|
       @order.add_to_order(item.id)
@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
       redirect_to root_path
       end
     end
-  
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to root_path

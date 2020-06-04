@@ -16,7 +16,6 @@ class Cart < ApplicationRecord
 
     def total_price
         total = 0
-        #Item.all.where('id = ?', CartItem.find_by(cart_id: self.id).item_id).each do |item|
         Item.where(id: self.cart_items.each.pluck(:item_id)).each do |item|
             total += item.price
         end

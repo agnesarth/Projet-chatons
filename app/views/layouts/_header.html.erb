@@ -21,14 +21,14 @@
             <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-secondary" %>
           </li>
         <% else %>
-          <% if current_user.superuser == true %>      
+          <% if current_user.superuser == true %>
             <%= link_to "Admin Dashboard", superuser_root_path, class: "btn btn-primary mr-3"%>
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"btn btn-secondary" %>
           <% else %>
           <% if !current_user.cart.present? %>
             <%= link_to carts_path, class:"nav-link" do %><li class="nav-item"><i class="fas fa-shopping-basket"></i> Mon panier</li><% end %>
-          <% else %>
-            <% cart = Cart.find_by_user_id(current_user.id) %>
+            <% else %>
+            <% cart = current_user.cart %>
             <%= link_to cart_path(cart.id), class:"nav-link" do %><li class="nav-item"><i class="fas fa-shopping-basket"></i> Mon panier</li><% end %>
           <% end %>
           <div class="nav-item dropdown-toggle nav-link" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paramètres</div>
