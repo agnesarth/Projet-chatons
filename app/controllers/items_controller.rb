@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  #before_action :current_cart, only: [:create]
+  before_action :authenticate_user!, only: [:create]
 
   def new
     @item = Item.new
