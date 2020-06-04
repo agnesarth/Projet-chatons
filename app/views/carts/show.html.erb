@@ -9,10 +9,8 @@
   </div>
 <% end %>
 
-<<<<<<< HEAD
+
 <div id="myCart">
-=======
->>>>>>> development
 <% @cart.items.each do |item| %>
   <div id="myItem<%=item.id%>" class="container">
     <div class="row m-1">
@@ -35,10 +33,7 @@
   <hr style="width:80%" class="mb-4 mt-4">
 </div>
 <% end %>
-<<<<<<< HEAD
 </div>
-=======
->>>>>>> development
 
 <div class="container text-center">
   <%= form_tag user_orders_path(current_user) do %>
@@ -49,11 +44,8 @@
         </div>
       <% end %>
       <label class="amount">
-<<<<<<< HEAD
         <span id="myBill">Régler <%= number_with_precision(@cart.total_price, precision: 2, strip_insignificant_zeros: true) %> €</span>
-=======
-        <span>Régler <%= sprintf('%.2f', number_with_precision(@cart.total_price, precision: 2, strip_insignificant_zeros: true)) %> €</span>
->>>>>>> development
+
       </label>
     </article>
 
