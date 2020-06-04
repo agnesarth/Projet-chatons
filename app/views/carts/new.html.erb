@@ -20,7 +20,6 @@
           <h6 class="card-subtitle"><b><%= sprintf('%.2f', item.price) %> €<b></h6>
         </div>
         <div class="col-xs-4">
-          <%= link_to "javascript:void(0)", class: "btn btn-primary btn-sm" do %><i class="fa fa-heart"></i><% end %>
           <%= link_to item_path(item.id), method: :delete, class: "btn btn-outline-dark btn-sm" do %><i class="fa fa-trash"></i><% end %>
         </div>
       </div>
