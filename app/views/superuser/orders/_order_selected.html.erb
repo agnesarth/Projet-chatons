@@ -1,11 +1,6 @@
-<thead>
-  <tr class="bg-primary text-white text-center">
-    <th scope="col">Commande n°<%= order.id %></th>
-  </tr>
-</thead>
-<tbody>
   <tr>
     <td>
+      <h4 class="my-3 pb-3"><b>Commandé par</b> <%=order.user.email%></h4>
       <% order.items.each do |item| %>
         <div class="container"></div>
           <div class="row m-1">
@@ -14,9 +9,8 @@
             </div>
             <div class="card-body pt-0 mr-auto card-body-show">
               <h4 class="card-title"><%= item.title %></h4>
-              <h6 class="card-subtitle"><%= item.description%></h6>
             </div>
-            <div class="text-right col">
+            <div class="text-right">
               <h6><b><%= sprintf('%.2f', item.price)%> €<b></h6>
               <h6>Quantité : 1</h6>
             </div>
@@ -30,4 +24,3 @@
       </div>
     </td>
   </tr>
-</tbody>
