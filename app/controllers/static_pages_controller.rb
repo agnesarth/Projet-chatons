@@ -7,7 +7,7 @@ class StaticPagesController < ApplicationController
     email = params[:email]
     subject = params[:subject]
     data = params[:body]
-    StaticPagesMailer.contact_email(name, email, subject, data).deliver
+    #StaticPagesMailer.contact_email(name, email, subject, data).deliver
   end
 
 

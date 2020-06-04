@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
       description: 'Rails Stripe customer',
       currency: 'eur',
     })
-    
+
     @order = Order.new(user: @user)
     @cart.items.each do |item|
       @order.add_to_order(item.id)
@@ -25,8 +25,8 @@ class OrdersController < ApplicationController
 
     if @order.save
       @cart.destroy
-      OrderMailer.order_completed(@order).deliver
-      OrderMailer.order_sent(@order).deliver
+      #OrderMailer.order_completed(@order).deliver
+      #OrderMailer.order_sent(@order).deliver
       flash[:success] = "Commande enregistrée."
       redirect_to root_path
     else
@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
       redirect_to root_path
       end
     end
-  
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to root_path
