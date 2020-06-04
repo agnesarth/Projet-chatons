@@ -54,3 +54,6 @@ end
     password: "chatons"
   )
 end
+
+# Seed SuperUser
+User.create!(email: 'animalmatching2020@gmail.com', password: "chatons", superuser: true)

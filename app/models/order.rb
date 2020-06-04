@@ -1,4 +1,6 @@
 class Order < ApplicationRecord
+    after_create :order_payed
+
     belongs_to :user
     has_many :order_items, dependent: :destroy
     has_many :items, through: :order_items
@@ -21,6 +23,10 @@ class Order < ApplicationRecord
         return total
     end
 
+    def order_payed
+      OrderMailer.order_completed(self).deliver
+      OrderMailer.order_sent(self).deliver
+    end
 
 
 end
