@@ -43,6 +43,10 @@
 
 - **Option 3**
     - 👯 Visit us online :arrow_right: https://arcane-basin-51216.herokuapp.com
+    
+ - **Want to try admin mode?**
+    - email: animalmatching2020@gmail.com
+    - password: chatons
 
 ## Versioning
 
