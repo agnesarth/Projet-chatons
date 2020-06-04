@@ -5,8 +5,7 @@
   <hr class="my-4">
   <p>Oui, on le sait, les chats c’est trop mignon ! Des images de chatons d'une qualité jamais égalée. </p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="mon_compte/sign_in" role="button">Trouver un chaton</a>
-    
+    <%= link_to "Trouvez moi un chaton", item_path(@items.all.sample(1)), class: "btn btn-primary btn-lg"%>
   </p>
 </div>
 
