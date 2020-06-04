@@ -56,8 +56,13 @@
 
 ## Team
 
-1. [Agnès Arthaud](https://github.com/agnesarth)
-2. [Jhonnatan Rangel](https://github.com/jhon-ran)
-3. [Lucile Gentaz](https://github.com/lgentaz) 
-4. [Milena Lazzaretti](https://github.com/mil3zh) 
-5. [Raphaël Delannay](https://github.com/Raphael-dln)
+
+
+| <a href="https://github.com/agnesarth" target="_blank">**Agnès Arthaud**</a> | <a href="https://github.com/jhon-ran" target="_blank">**Jhonnatan Rangel**</a> | <a href="https://github.com/lgentaz" target="_blank">**Lucile Gentaz**</a> |
+| :---: |:---:| :---:|
+| [![FVCproductions](https://media-exp1.licdn.com/dms/image/C4E03AQGc8G50ruhuxw/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=FjSX5gnxW5kGpsnedtBox2tTPWYDUsD5_4zlmRlDF4o)](#)    | [![Milena Lazzaretti](https://media-exp1.licdn.com/dms/image/C4D03AQFyv7LyeCk-Cg/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=reDt5eUTD7z4Zq9s4_pxzzRozorf0KS7fNhJLEKNbL4)](#) | [![FVCproductions](https://media-exp1.licdn.com/dms/image/C5603AQHeNPSaa8cmoA/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=EqumQNTG80Q9pUHbDn3d3KO1XGTBfIvvueUu4H20mrU)](#)  |
+
+
+| <a href="https://github.com/mil3zh" target="_blank">**Milena Lazzaretti**</a> | <a href="https://github.com/Raphael-dln" target="_blank">**Raphaël Delannay**</a> | 
+| :---: |:---:|
+| [![FVCproductions](https://static-exp1.licdn.com/sc/h/djzv59yelk5urv2ujlazfyvrk)](#)    | [![FVCproductions](https://media-exp1.licdn.com/dms/image/C5603AQGeyV2izbUnLw/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=iHKzNcCY21pzWYVTS_GdPwlDf1bHmIv2CLyLoWJTPyQ)](#) | 
