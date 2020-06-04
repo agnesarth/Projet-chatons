@@ -8,13 +8,8 @@
         <% unless current_user.cart.present? %>
         <%= link_to "Mon panier", carts_path, class:"nav-link" %>
         <% else %>
-<<<<<<< HEAD
-        <% cart = Cart.find_by_user_id(current_user.id) %>
-        <%= link_to "Mon panier", carts_path, class:"nav-link"%>
-=======
         <% cart = current_user.cart %>
         <%= link_to "Mon panier", cart_path(cart.id), class:"nav-link"%>
->>>>>>> development
         <% end %>
 
           <%= link_to "Mon profil", users_path, class: "nav-link"%>

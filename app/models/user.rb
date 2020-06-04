@@ -1,10 +1,5 @@
 class User < ApplicationRecord
-<<<<<<< HEAD
-  after_commit :welcome_send, only: :create
-
-=======
   after_commit :welcome_send, only: [:create]
->>>>>>> development
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
