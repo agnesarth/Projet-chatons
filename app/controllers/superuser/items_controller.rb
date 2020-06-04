@@ -12,7 +12,6 @@ class Superuser::ItemsController < Superuser::BaseController
         end   
     end
 
-      
     def create
         @item = Item.create!(item_params)
         @item.photo.attach(params[:photo])
@@ -22,11 +21,24 @@ class Superuser::ItemsController < Superuser::BaseController
     end
 
     def edit
-        @item = Item.find(params[:id])
+      @item = Item.find(params[:id])
+      respond_to do |format|
+        format.html { redirect_to new_superuser_item_path }
+        format.js { }
+      end   
     end
     
       def update
 
     end
+    
+    private
+
+    def item_params
+      params.permit(:title, :price, :description, :photo)
+    end
+  
+
+
 
 end
