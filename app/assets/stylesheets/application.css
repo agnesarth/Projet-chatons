@@ -144,7 +144,3 @@ section {
 .card-body-show {
   max-width: 450px;
 }
-
-.stripe-button-el{
-  display: !none;
-}
