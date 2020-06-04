@@ -25,7 +25,7 @@
             <% unless current_user.cart.present? %>
             <%= link_to carts_path, class:"nav-link" do %><li class="nav-item"><i class="fas fa-shopping-basket"></i> Mon panier</li><% end %>
             <% else %>
-            <% cart = Cart.find_by_user_id(current_user.id) %>
+            <% cart = current_user.cart %>
             <%= link_to cart_path(cart.id), class:"nav-link" do %><li class="nav-item"><i class="fas fa-shopping-basket"></i> Mon panier</li><% end %>
             <% end %>
 

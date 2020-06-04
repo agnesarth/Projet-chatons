@@ -24,7 +24,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   /*Remove this section to remove jumbotron image */
-  
+
 }
 
 .alert {
@@ -75,11 +75,11 @@
 }
 
 .item-breadcrumb {
-  color: #AEA7A1; 
+  color: #AEA7A1;
 }
 
 .item-breadcrumb:hover {
-  color: #868e96; 
+  color: #868e96;
 }
 
 .button-back {
@@ -143,4 +143,8 @@ section {
 
 .card-body-show {
   max-width: 450px;
+}
+
+.stripe-button-el{
+  display: !none;
 }
