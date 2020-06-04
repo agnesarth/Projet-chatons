@@ -12,13 +12,14 @@ class Superuser::ItemsController < Superuser::BaseController
         end   
     end
 
-      
     def create
         @item = Item.create!(item_params)
         @item.photo.attach(params[:photo])
         if @item.save
+        flash[:success]= "Catwoman te remercie"
           redirect_to root_path
         end
+
     end
 
     def edit
@@ -29,4 +30,9 @@ class Superuser::ItemsController < Superuser::BaseController
 
     end
 
+    private
+
+    def item_params
+        params.permit(:title, :price, :description, :photo)
+      end
 end
