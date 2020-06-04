@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :carts, :items
   
   resources :users, path: "mon_compte" do
-    resources :orders, path: "mes_commandes"
+    resources :orders, path: "commandes"
   end
   
   get '/about', to: 'static_pages#about'
