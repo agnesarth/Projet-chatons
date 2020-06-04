@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  #before_action :current_cart, only: [:create]
 
   def new
     @item = Item.new
