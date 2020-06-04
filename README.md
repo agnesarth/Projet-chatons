@@ -69,4 +69,4 @@
 
 | <a href="https://github.com/mil3zh" target="_blank">**Milena Lazzaretti**</a> | <a href="https://github.com/Raphael-dln" target="_blank">**Raphaël Delannay**</a> | 
 | :---: |:---:|
-| [![FVCproductions](https://static-exp1.licdn.com/sc/h/djzv59yelk5urv2ujlazfyvrk)](#)    | [![FVCproductions](https://media-exp1.licdn.com/dms/image/C5603AQGeyV2izbUnLw/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=iHKzNcCY21pzWYVTS_GdPwlDf1bHmIv2CLyLoWJTPyQ)](#) | 
+| [![FVCproductions](https://media-exp1.licdn.com/dms/image/C4D03AQGdA3DB8EBy1w/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=n9QeuqQ9tCEiDdQQ5XtyCLQMdntg7yhA2TewNmCag4g)](#)    | [![FVCproductions](https://media-exp1.licdn.com/dms/image/C5603AQGeyV2izbUnLw/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=iHKzNcCY21pzWYVTS_GdPwlDf1bHmIv2CLyLoWJTPyQ)](#) | 
