@@ -2,18 +2,6 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:create,:update]
   skip_before_action :verify_authenticity_token, :only => [:create]
 
-  def new
-    @item = Item.new
-  end
-
-  def create
-    @item = Item.create!(item_params)
-    @item.photo.attach(params[:photo])
-    if @item.save
-      redirect_to root_path
-    end
-  end
-
   def show
     @item = Item.find(params[:id])
   end

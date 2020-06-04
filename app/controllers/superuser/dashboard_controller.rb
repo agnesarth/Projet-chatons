@@ -1,20 +1,9 @@
-class Superuser::DashboardController < ApplicationController
-        before_action :check_if_superuser
-    
-        def index
-            
-        end
-      
-    
-        private
+class Superuser::DashboardController < Superuser::BaseController
+    before_action :check_if_superuser
+
+    def index 
         
-        def check_if_superuser
-            authenticate_user!
-    
-            if !current_user.superuser
-                flash[:danger] = "Accès refusé"
-                redirect_to root_path      
-            end
-        end
-    
     end
+    
+
+end

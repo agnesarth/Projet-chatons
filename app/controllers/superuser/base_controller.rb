@@ -1,10 +1,5 @@
-class Superuser::OrdersController < ApplicationController
+class Superuser::BaseController < ApplicationController
     before_action :check_if_superuser
-
-    def index
-
-    end
-
 
     private
 

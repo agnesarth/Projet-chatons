@@ -47,17 +47,22 @@ class OrdersController < ApplicationController
   def show
     @user = User.find(current_user.id)
     @order= Order.find(params[:id])
-    @order.update(read: true)
-    respond_to do |format|
-      format.html { redirect_to user_order_path }
-      format.js { }
+    if !current_user?(@order.user)
+      flash[:error] = "Vous n'êtes pas le bon utilisateur."
+      redirect_to root_path
+    else
+      @order.update(read: true)
+      respond_to do |format|
+        format.html { redirect_to user_order_path }
+        format.js { }
+      end
     end
   end
 
   def index
     @user = User.find(current_user.id)
     @order= Order.all
-
+    
   end
 
   private

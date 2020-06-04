@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-    after_create :order_payed
+    after_commit :order_payed, only: :create
 
     belongs_to :user
     has_many :order_items, dependent: :destroy

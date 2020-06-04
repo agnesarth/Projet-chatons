@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  include UsersHelper
 
   def current_cart
     if current_user.cart.present?
