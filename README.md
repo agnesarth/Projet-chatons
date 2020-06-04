@@ -42,7 +42,7 @@
 - Have fun :heartpulse:
 
 - **Option 3**
-    - 👯 Visit us online :arrow_right: https://boiling-inlet-79758.herokuapp.com
+    - 👯 Visit us online :arrow_right: https://arcane-basin-51216.herokuapp.com
 
 ## Versioning
 
