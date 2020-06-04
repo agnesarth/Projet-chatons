@@ -13,6 +13,10 @@ class CartsController < ApplicationController
 
   def show
     @cart = Cart.find(params[:id])
+    if !current_user?(@cart.user)
+      flash[:error] = "Vous n'êtes pas le bon utilisateur."
+      redirect_to root_path
+    end
   end
 
   def index
@@ -21,10 +25,18 @@ class CartsController < ApplicationController
 
   def edit
     @cart = Cart.find(params[:id])
+    if !current_user?(@cart.user)
+      flash[:error] = "Vous n'êtes pas le bon utilisateur."
+      redirect_to root_path
+    end
   end
 
   def update
     @cart = Cart.find(params[:id])
+    if !current_user?(@cart.user)
+      flash[:error] = "Vous n'êtes pas le bon utilisateur."
+      redirect_to root_path
+    end
   end
 
   def destroy
