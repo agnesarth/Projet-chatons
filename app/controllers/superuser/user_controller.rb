@@ -1,4 +1,4 @@
-class Superadmin::UsersController < ApplicationController
+class Superuser::UsersController < ApplicationController
     before_action :check_if_superuser
 
     def show

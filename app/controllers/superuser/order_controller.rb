@@ -1,8 +1,8 @@
-class Superadmin::OrdersController < ApplicationController
+class Superuser::OrdersController < ApplicationController
     before_action :check_if_superuser
 
     def index
-        
+
     end
 
 
@@ -13,7 +13,7 @@ class Superadmin::OrdersController < ApplicationController
 
         if !current_user.superuser
             flash[:danger] = "Accès refusé"
-            redirect_to root_path      
+            redirect_to root_path
         end
     end
 end
