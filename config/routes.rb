@@ -7,9 +7,9 @@ Rails.application.routes.draw do
     resources :photos, only: [:new, :create]
   end
 
-   resources :users, path: "mon_compte" do
+  resources :users, path: "mon_compte" do
      resources :orders, path: "mes_commandes"
-   end
+  end
 
   namespace :superuser do
     root 'dashboard#index'

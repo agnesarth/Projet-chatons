@@ -1,12 +1,8 @@
-class Superuser::ItemController < ApplicationController
+class Superuser::BaseController < ApplicationController
     before_action :check_if_superuser
-
-    def index        
-    end
-  
-
-    private
     
+    private
+        
     def check_if_superuser
         authenticate_user!
 
@@ -15,5 +11,4 @@ class Superuser::ItemController < ApplicationController
             redirect_to root_path      
         end
     end
-
 end
