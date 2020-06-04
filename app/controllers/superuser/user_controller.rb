@@ -1,4 +1,4 @@
-class Superuser::UsersController < ApplicationController
+class Superadmin::UsersController < ApplicationController
     before_action :check_if_superuser
 
     def show
@@ -8,7 +8,7 @@ class Superuser::UsersController < ApplicationController
           redirect_to root_path
         end
       end
-    
+
       def edit
         @user = User.find(params[:id])
         if !current_user?(@user.id)
@@ -16,7 +16,7 @@ class Superuser::UsersController < ApplicationController
           redirect_to root_path
         end
       end
-    
+
       def update
         @user = User.find(current_user.id)
         if @user.update(user_params)
@@ -31,9 +31,9 @@ class Superuser::UsersController < ApplicationController
             flash[:danger] = "Impossible de modifier le profil: #{messages.join(" ")}"
           end
           redirect_to edit_user_path
-        end 
+        end
       end
-    
+
       def user_params
         params.require(:user).permit(:first_name, :last_name, :description, :avatar)
       end
@@ -45,7 +45,7 @@ class Superuser::UsersController < ApplicationController
 
         if !current_user.superuser
             flash[:danger] = "Accès refusé"
-            redirect_to root_path      
+            redirect_to root_path
         end
     end
 
