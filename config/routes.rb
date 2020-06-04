@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'items#index'
   devise_for :users, path: "mon_compte"
 
-  resources :users,:carts,:items, :charges, :favorites
+  resources :users,:carts,:items, :charges, :favorites, :wishlists
   resources :carts, path: "mon_panier"
   resources :items, path: "produits" do
     resources :photos, only: [:new, :create]

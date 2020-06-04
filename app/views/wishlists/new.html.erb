@@ -1,0 +1,15 @@
+<div class="container text-center mt-5 mb-5">
+  <h1>Ma wishlist</h1>
+</div>
+
+<% if @wishlist.items.empty? %>
+  <div class="container text-center mt-5 mb-5">
+  <h3>Quand les chats ne sont pas là ...</h3>
+  <h6>La wishlist est vide.</h6>
+  </div>
+<% else %>
+  <div class="container text-center mt-5 mb-5">
+  <h3>Il y a quelque chose dans cette wishlist</h3>
+  <h6>Mais qu'est-ce que ça peut bien être ?</h6>
+  </div>
+<% end %>
