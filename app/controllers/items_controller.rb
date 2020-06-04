@@ -30,9 +30,6 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @cart = current_cart
-    if @cart.items.include?(@item)
-      flash[:alert] = "Alert! Animal trafficking! Cat already in the cart, no more of this breed allowed"
-    end
     @cart.add_to_cart(params[:id])
 
     respond_to do |format|

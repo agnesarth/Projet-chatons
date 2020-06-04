@@ -18,13 +18,13 @@
       <% else %>
       <img class="card-img-top" src=<%= item.image_url %> >
       <% end %>
-      <div class="card-body">
+      <div id="indexCart<%= item.id %>" class="card-body">
         <p class="card-text "><b> <%= sprintf('%.2f', item.price) %> €</b></p>
           <div class="d-flex justify-content-between">
           <%= link_to "Voir le produit", item_path(item), class: "btn btn-outline-primary btn-sm mr-3"%>
           <%= link_to "javascript:void(0)", class: "btn btn-primary btn-sm ml-auto" do %><i class="fa fa-heart"></i><% end %>
           <% if user_signed_in? %>
-          <%= link_to item_path(id: item.id), method: :put, class: "btn btn-primary btn-sm ml-1", remote: true do %><i class="fa fa-shopping-cart"></i><% end %>
+          <%= link_to item_path(id: item.id), method: :put, class: "btn btn-primary btn-sm ml-1", remote: true do %><i id="myCartButton<%= item.id %>" class="fa fa-shopping-cart"></i><% end %>
           <% else %>
           <%= link_to new_cart_path, class: "btn btn-primary btn-sm" do %><i class="fa fa-shopping-cart"></i><% end %>
           <% end %>
