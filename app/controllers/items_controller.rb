@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create,:update]
   skip_before_action :verify_authenticity_token, :only => [:create]
 
   def show
