@@ -8,9 +8,20 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_one :cart, dependent: :destroy
   has_many :cart_items, through: :cart, dependent: :destroy
+  has_many :favorites
+  has_many :items, through: :favorites
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
+  end
+
+ def favorite(item)
+    favorites.find_or_create_by(item: item)
+  end
+ 
+  def unfavorite(item)
+    favorites.where(item: item).destroy_all
+    item.reload
   end
 
 end
