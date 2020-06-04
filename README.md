@@ -56,11 +56,7 @@
 
 ## Team
 
-1. [Agnès Arthaud](https://github.com/agnesarth)
-2. [Jhonnatan Rangel](https://github.com/jhon-ran)
-3. [Lucile Gentaz](https://github.com/lgentaz) 
-4. [Milena Lazzaretti](https://github.com/mil3zh) 
-5. [Raphaël Delannay](https://github.com/Raphael-dln)
+
 
 | <a href="https://github.com/agnesarth" target="_blank">**Agnès Arthaud**</a> | <a href="https://github.com/jhon-ran" target="_blank">**Jhonnatan Rangel**</a> | <a href="https://github.com/lgentaz" target="_blank">**Lucile Gentaz**</a> |
 | :---: |:---:| :---:|
