@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @cart = current_cart
     if @cart.items.include?(@item)
-      flash[:error] = "Alert! Animal trafficking! Cat already in the cart, no more of this breed allowed"
+      flash[:error] = "Alerte ! Trafic d'animal ! Ce chat est déjà dans le panier, un seul chat par race est permis."
     end
     @cart.add_to_cart(params[:id])
     redirect_to cart_path(@cart.id)
