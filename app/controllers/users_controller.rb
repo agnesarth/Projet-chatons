@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  
+
   def new
     @user = User.new
   end
@@ -11,6 +11,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if !current_user?(@user)
+      flash[:error] = "Vous n'êtes pas le bon utilisateur."
+      redirect_to root_path
+    end
   end
 
   def index
@@ -19,16 +23,30 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if !current_user?(@user)
+      flash[:error] = "Vous n'êtes pas le bon utilisateur."
+      redirect_to root_path
+    end
   end
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
+    if !current_user?(@user)
+      flash[:error] = "Vous n'êtes pas le bon utilisateur."
+      redirect_to root_path
+    else
+      @user.update(user_params)
+    end
   end
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
+    if !current_user?(@user)
+      flash[:error] = "Vous n'êtes pas le bon utilisateur."
+      redirect_to root_path
+    else
+      @user.destroy
+    end
   end
 
  private

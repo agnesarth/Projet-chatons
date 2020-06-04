@@ -35,6 +35,7 @@
 <% end %>
 </div>
 
+<% unless @cart.items.empty? %>
 <div class="container text-center">
   <%= form_tag user_orders_path(current_user) do %>
     <article>
@@ -49,7 +50,7 @@
       </label>
     </article>
 
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button-el stripe-button"
       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
       data-label="Procéder au paiement"
       data-description="Panier"
@@ -64,6 +65,7 @@
   <% end %>
 
 </div>
+<% end %>
 
 <div class="container font-weight-bold mt-5">
 <%= link_to " < Retour", :back %>

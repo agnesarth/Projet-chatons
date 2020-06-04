@@ -1,5 +1,4 @@
 if (document.getElementById("myCartButton<%= @item.id %>").classList.contains("fa-check")){
-  //document.getElementById("indexCart<%= @item.id %>").insertAdjacentHTML("afterbegin", "<p class="alert">Chatons déjà dans le panier</p>")
-  alert("Chaton déjà dans le panier");
+  alert("Ce chaton est déjà dans ton panier");
 }
 document.getElementById("myCartButton<%= @item.id %>").classList.replace("fa-shopping-cart","fa-check");

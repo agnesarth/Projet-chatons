@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
+  skip_before_action :verify_authenticity_token, :only => [:create]
 
   def show
     @item = Item.find(params[:id])
