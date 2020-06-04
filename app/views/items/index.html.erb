@@ -23,7 +23,11 @@
           <div class="d-flex justify-content-between">
             <%= link_to "Voir le produit", item_path(item), class: "btn btn-outline-primary btn-sm mr-3"%>        
             <% if user_signed_in? %>
-              <%= link_to wishlists_path, method: :post, class: "btn btn-primary btn-sm ml-auto" do %><i class="fa fa-heart"></i><% end %>
+              <%= form_for 'favorite', wishlist_path, method: :post, remote: true do |f|%>
+                <%= f.hidden_field :item_id, value: item.id %>
+                <i id="myCartButton<%= item.id %>" class="fa fa-shopping-cart"></i>
+                <%= f.submit '', class: "btn btn-primary btn-sm ml-1" %>
+             <% end %>
               <%= link_to item_path(id: item.id), method: :put, class: "btn btn-primary btn-sm ml-1", remote: true do %><i id="myCartButton<%= item.id %>" class="fa fa-shopping-cart"></i><% end %>
             <% else %>
               <%= link_to new_wishlist_path, class: "btn btn-primary btn-sm ml-auto" do %><i class="fa fa-heart"></i><% end %>

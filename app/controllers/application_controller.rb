@@ -11,4 +11,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def current_wishlist
+    if current_user.wishlist.present?
+      current_wishlist = current_user.wishlist
+    else
+      current_wishlist = Wishlist.create(user: current_user)
+      session[:wishlist_id] = current_wishlist.id
+      current_wishlist
+    end
+  end
+
+
 end
