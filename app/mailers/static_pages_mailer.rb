@@ -1,8 +1,10 @@
 class StaticPagesMailer < ApplicationMailer
-    def contact_email(first_name, last_name, email, subject, data)
-        @user = first_name + " " + last_name
+    default from: 'animalmatching2020@gmail.com'
+
+    def contact_email(name, email, subject, data)
+        @user = name
         @user_email = email
         @body = data
-        mail(from: email, to: 'animalmatching2020@gmail.com', subject: subject)
+        mail(to: 'animalmatching2020@yopmail.com', subject: subject)
     end
 end

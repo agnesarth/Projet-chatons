@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  #before_action :current_cart, only: [:create]
+  before_action :authenticate_user!, only: [:create]
 
   def new
     @item = Item.new
@@ -8,9 +8,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.create!(item_params)
     @item.photo.attach(params[:photo])
-    p @item.errors.messages
     if @item.save
-      p @item.errors.messages
       redirect_to root_path
     end
   end
